@@ -1,4 +1,3 @@
-import './App.css'
 import { MainLayout } from './components'
 
 function App() {
@@ -8,7 +7,7 @@ function App() {
     <div className="App">
       
       <MainLayout>
-        <div>kjsdgkjshgkj</div>
+        <div>children content</div>
       </MainLayout>
     </div>
   )
