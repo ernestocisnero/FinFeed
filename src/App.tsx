@@ -1,11 +1,15 @@
 import './App.css'
+import { MainLayout } from './components'
 
 function App() {
   
 
   return (
-    <div className="App bg-slate-800">
-      skfgj
+    <div className="App">
+      
+      <MainLayout>
+        <div>kjsdgkjshgkj</div>
+      </MainLayout>
     </div>
   )
 }
