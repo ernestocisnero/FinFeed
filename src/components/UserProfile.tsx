@@ -8,7 +8,7 @@ export const UserProfile = () => {
 
             <div className="flex flex-col">
                 <p className="font-bold">Jhon Doe</p>
-                <p> email@email.com </p>
+                <p className="font-thin"> email@email.com </p>
 
             </div>
 
