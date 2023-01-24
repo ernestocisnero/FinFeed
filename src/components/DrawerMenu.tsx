@@ -5,7 +5,7 @@ export const DrawerMenu = () => {
     return (
         <aside className="flex flex-col min-w-[9.2%] border-r-[1px] border-slate-300 justify-between">
             <ul className="my-5 mx-2">
-                <li className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400s hover:bg-[#266663] hover:text-neutral-50">
+                <li className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400 hover:bg-[#266663] hover:text-neutral-50">
                     <span className="material-symbols-outlined">dashboard</span>
                     <a href="#" className="ml-2">Dashboard</a>
                 </li>
@@ -23,7 +23,7 @@ export const DrawerMenu = () => {
                 </li>
                 <li className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400  hover:bg-[#266663] hover:text-neutral-50">
                     <span className="material-symbols-outlined">attach_money</span>
-                    <a href="#" className="ml-2">Depostis</a>
+                    <a href="#" className="ml-2">Deposit</a>
                 </li>
                 <li className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400 hover:bg-[#266663] hover:text-neutral-50">
                     <span className="material-symbols-outlined">summarize</span>
