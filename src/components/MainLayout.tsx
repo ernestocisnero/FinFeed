@@ -12,15 +12,14 @@ export const MainLayout = ({ children }: MainLayoutPropType) => {
                 <div className="p-3">
                     <img src="FinFeed.svg" alt="name_page" className="w-28"/>
                 </div>
-                
                 <UserProfile />
             </nav>
 
             <div className="flex flex-grow">
                 <DrawerMenu />
-                <div className="">
+                <main className="p-4">
                     {children}
-                </div>
+                </main>
             </div>
         </div>
     )
