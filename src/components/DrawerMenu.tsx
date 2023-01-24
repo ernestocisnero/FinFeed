@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 
 export const DrawerMenu = () => {
@@ -7,31 +7,31 @@ export const DrawerMenu = () => {
             <ul className="my-5 mx-2">
                 <li className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400 hover:bg-[#266663] hover:text-neutral-50">
                     <span className="material-symbols-outlined">dashboard</span>
-                    <a href="#" className="ml-2">Dashboard</a>
+                    <Link to='/' className="ml-2">Dashboard</Link>
                 </li>
                 <li className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400 hover:bg-[#266663] hover:text-neutral-50">
                 <span className="material-symbols-outlined">design_services</span>
-                    <a href="#" className="ml-2">Services</a>
+                    <Link to='/services' className="ml-2">Services</Link>
                 </li>
                 <li className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400 hover:bg-[#266663] hover:text-neutral-50">
                     <span className="material-symbols-outlined">currency_exchange</span>
-                    <a href="#" className="ml-2">Exchange</a>
+                    <Link to='exchange' className="ml-2">Exchange</Link>
                 </li>
                 <li className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400 hover:bg-[#266663] hover:text-neutral-50">
                     <span className="material-symbols-outlined">credit_card</span>
-                    <a href="#" className="ml-2">Cards</a>
+                    <Link to='cards' className="ml-2">Cards</Link>
                 </li>
                 <li className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400  hover:bg-[#266663] hover:text-neutral-50">
                     <span className="material-symbols-outlined">attach_money</span>
-                    <a href="#" className="ml-2">Deposit</a>
+                    <Link to='deposit' className="ml-2">Deposit</Link>
                 </li>
                 <li className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400 hover:bg-[#266663] hover:text-neutral-50">
                     <span className="material-symbols-outlined">summarize</span>
-                    <a href="#" className="ml-2">History</a>
+                    <Link to='history' className="ml-2">History</Link>
                 </li>
                 <li className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400 hover:bg-[#266663] hover:text-neutral-50">
                     <span className="material-symbols-outlined">person</span>
-                    <a href="#" className="ml-2">Account</a>
+                    <Link to='account' className="ml-2">Account</Link>
                 </li>
             </ul>
 
