@@ -2,14 +2,17 @@ import { PaymentStatistics } from "../components"
 
 export const Dashboard = (): JSX.Element => {
     return (
-        <div className="flex space-x-4">
-            <div className="min-w-[60%] h-fit">
-                <PaymentStatistics />
+        <>
+            <div className="col-start-1 col-end-7">
+                <PaymentStatistics /> 
             </div>
-            <div className="bg-red-900 min-w-[40%] h-fit">
-                02
-                02
+
+            <div className="col-start-8 col-end-12">
+                <div>01</div>
+                <div>02</div>
+                <div>03</div>
+                <div>04</div>
             </div>
-        </div>
+        </>
     )
 }
