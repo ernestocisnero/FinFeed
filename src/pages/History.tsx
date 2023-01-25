@@ -1,6 +1,12 @@
+import { IncExpChart } from "../components"
 
 export const History = (): JSX.Element => {
     return (
-        <div>History</div>
+        <div className="col-start-1 col-end-12">
+
+            History
+            <IncExpChart />
+
+        </div>
     )
 }

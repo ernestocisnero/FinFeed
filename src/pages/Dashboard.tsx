@@ -1,10 +1,12 @@
-import { PaymentStatistics } from "../components"
+import { ExpByCategoriesChart, PaymentStatistics } from "../components"
+
 
 export const Dashboard = (): JSX.Element => {
     return (
         <>
             <div className="col-start-1 col-end-7">
                 <PaymentStatistics /> 
+                <ExpByCategoriesChart />
             </div>
 
             <div className="col-start-8 col-end-12">
