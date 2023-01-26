@@ -1,4 +1,7 @@
-import { ExpByCategoriesChart, PaymentStatistics } from "../components"
+import { ExpByCategoriesChart, PaymentHistory, PaymentStatistics } from "../components"
+import { TotalBalance } from '../components/TotalBalance';
+import { YourCard } from '../components/YourCard';
+import { Planning } from '../components/Planning';
 
 
 export const Dashboard = (): JSX.Element => {
@@ -7,13 +10,14 @@ export const Dashboard = (): JSX.Element => {
             <div className="col-start-1 col-end-7">
                 <PaymentStatistics /> 
                 <ExpByCategoriesChart />
+                <PaymentHistory />
             </div>
 
-            <div className="col-start-8 col-end-12">
-                <div>01</div>
-                <div>02</div>
-                <div>03</div>
-                <div>04</div>
+            <div className="col-start-8 col-end-12 p-3 border-[1px] border-neutral-100 rounded-md">
+                <TotalBalance />
+                <YourCard />
+                <Planning />
+
             </div>
         </>
     )

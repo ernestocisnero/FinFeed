@@ -5,7 +5,7 @@ export const PaymentStatistics = () => {
             <div className="flex justify-between">
                 <h3 className="font-bold">Payment Statistic</h3>
 
-                <button className="bg-slate-100 p-1 rounded-sm">
+                <button className="bg-slate-50 hover:bg-slate-100 p-1 rounded-sm">
                     <span className="material-symbols-outlined">
                         tune
                     </span>
