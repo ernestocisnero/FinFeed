@@ -2,13 +2,15 @@ import { ExpByCategoriesChart, PaymentHistory, PaymentStatistics } from "../comp
 import { TotalBalance } from '../components/TotalBalance';
 import { YourCard } from '../components/YourCard';
 import { Planning } from '../components/Planning';
-
+import { supabase } from "../supabase/client";
+import { useEffect } from 'react';
 
 export const Dashboard = (): JSX.Element => {
+
     return (
         <>
             <div className="col-start-1 col-end-7">
-                <PaymentStatistics /> 
+                <PaymentStatistics />
                 <ExpByCategoriesChart />
                 <PaymentHistory />
             </div>
