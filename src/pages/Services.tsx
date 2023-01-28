@@ -1,6 +1,6 @@
 
 export const Services = () => {
     return (
-        <div>Services</div>
+        <div>Soon</div>
     )
 }

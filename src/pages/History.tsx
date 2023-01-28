@@ -4,8 +4,8 @@ export const History = (): JSX.Element => {
     return (
         <div className="col-start-1 col-end-12">
 
-            History
-            <IncExpChart />
+            Soon
+            {/* <IncExpChart /> */}
 
         </div>
     )
