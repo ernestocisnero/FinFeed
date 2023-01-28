@@ -12,7 +12,8 @@ const data = [
 
 const options = {
     title: "Expenses by categories",
-    is3D: true,
+    pieHole: 0.4,
+    is3D: false,
 };
 
 
