@@ -7,6 +7,17 @@ import { useEffect } from 'react';
 
 export const Dashboard = (): JSX.Element => {
 
+    const readData = async ()=>{
+        const resp =await supabase.from('Users').select('Name')
+        console.log(resp);
+        
+    }
+
+    useEffect(() => {
+        readData()
+    }, [])
+    
+
     return (
         <>
             <div className="col-start-1 col-end-7">
