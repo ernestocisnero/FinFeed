@@ -13,9 +13,9 @@ export const DrawerMenu = () => {
                 <span className="material-symbols-outlined mr-2">design_services</span>
                     Services
                 </Link>
-                <Link to='exchange' className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400 hover:bg-[#266663] hover:text-neutral-50">
+                <Link to='tracker' className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400 hover:bg-[#266663] hover:text-neutral-50">
                     <span className="material-symbols-outlined mr-2">currency_exchange</span>
-                    Exchange
+                    Tracker
                 </Link>
                 <Link to='cards' className="flex align-middle mb-2 px-1 py-3 rounded-sm text-neutral-400 hover:bg-[#266663] hover:text-neutral-50">
                     <span className="material-symbols-outlined mr-2">credit_card</span>

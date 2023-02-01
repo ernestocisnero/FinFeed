@@ -1,5 +1,5 @@
 
-export const Exchange = (): JSX.Element => {
+export const Tracker = (): JSX.Element => {
     return (
         <div>Soon</div>
     )
