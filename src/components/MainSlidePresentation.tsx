@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const MainSlidePresentation = () => {
+export const MainSlidePresentation = ():JSX.Element => {
   return (
     <div className='flex flex-col items-center'>
         <h2 className='text-4xl'>Welcome to FinFeed!</h2>

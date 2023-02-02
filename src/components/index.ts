@@ -12,3 +12,4 @@ export * from './Card';
 export * from './Planning';    
 export * from './Plan';    
 export * from './MainSlidePresentation';    
+export * from './LoginForm';    
