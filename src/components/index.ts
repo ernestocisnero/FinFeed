@@ -13,3 +13,4 @@ export * from './Planning';
 export * from './Plan';    
 export * from './MainSlidePresentation';    
 export * from './LoginForm';    
+export * from './RegisterForm';    

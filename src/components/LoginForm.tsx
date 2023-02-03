@@ -35,7 +35,7 @@ export const LoginForm = () => {
                     </button>
                 </div>
 
-                <p className="text-center text-slate-500 font-light mt-8">Don't you have an account?  <Link className="text-blue-700 font-semibold" to='/auth/register'>Sign Up</Link></p>
+                <p className="text-center text-slate-500 font-light mt-8">Don't you have an account? <Link className="text-blue-700 font-semibold" to='/auth/register'>Sign Up</Link></p>
             </form>
             <p className="text-center text-gray-500 text-xs">
                 &copy;{new Date().getFullYear()} FinFeed. All rights reserved.
