@@ -3,7 +3,7 @@ import { useState } from 'react';
 export const MainSlidePresentation = (): JSX.Element => {
 
   const [textPointer, settextPointer] = useState<number>(0);
-  const textToShowAtPresentation: Array<string> = ['Start managing your finance smarter and ease','Control how your money is moving','Automatic payment for your services','Define financial goals'];
+  const textToShowAtPresentation: Array<string> = ['Start managing your finance smarter and ease','Control how your money is moving','Automatic payment of your services','Define financial goals'];
 
   const mainSlidePresentation = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
     if( event.currentTarget.id === 'left_btn'){
