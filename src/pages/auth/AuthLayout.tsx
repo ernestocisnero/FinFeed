@@ -22,7 +22,7 @@ export const AuthLayout = ({ children }: AuthLayoutType) => {
                     </div>
                 </div>
 
-                <div className="ml-10">
+                <div className="ml-10 mb-10">
                     <MainSlidePresentation />
                 </div>
 
