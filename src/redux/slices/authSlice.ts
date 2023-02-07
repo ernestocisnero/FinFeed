@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Iauth_initial_state } from '../../interfaces';
 
 const initialState: Iauth_initial_state = {
-    status: 'not-authenticated', // authenticated, not-authenticated
+    status: 'not-authenticated', // authenticated, not-authenticated, checking
     displayName: null,
     email: null,
     uid: null,
