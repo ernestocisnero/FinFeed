@@ -2,21 +2,9 @@ import { ExpByCategoriesChart, PaymentHistory, PaymentStatistics } from "../comp
 import { TotalBalance } from '../components/TotalBalance';
 import { YourCard } from '../components/YourCard';
 import { Planning } from '../components/Planning';
-import { supabase } from "../supabase/client";
-import { useEffect } from 'react';
+
 
 export const Dashboard = (): JSX.Element => {
-
-    const readData = async ()=>{
-        const resp =await supabase.from('Users').select('Name')
-        console.log(resp);
-        
-    }
-
-    useEffect(() => {
-        readData()
-    }, [])
-    
 
     return (
         <>
