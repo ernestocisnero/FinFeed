@@ -8,10 +8,9 @@ type Inputs = {
     password: string,
 };
 
-export const LoginForm = () => {
+export const LoginForm = (): JSX.Element => {
 
     const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful } } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 
     useEffect(() => {
         if (isSubmitSuccessful) {
@@ -21,7 +20,16 @@ export const LoginForm = () => {
             });
         }
 
-    }, [isSubmitSuccessful])
+    }, [isSubmitSuccessful]);
+
+
+    const onSubmit: SubmitHandler<Inputs> = data => {
+        const { email, password } = data;
+        console.log(email, password);
+        
+        
+    }
+
 
     return (
         <div className="w-full max-w-lg">
@@ -31,7 +39,7 @@ export const LoginForm = () => {
                     <span className="material-symbols-outlined">
                         mail
                     </span>
-                    <input  {...register("email")} className="focus:outline-none focus:shadow-outline mx-3 w-full bg-inherit" id="email" type="email" placeholder="your_email@example.com" />
+                <input  {...register("email")} required className="focus:outline-none focus:shadow-outline mx-3 w-full bg-inherit" id="email" type="email" placeholder="your_email@example.com" />
                 </div>
 
                 {/* Password */}
@@ -39,8 +47,9 @@ export const LoginForm = () => {
                     <span className="material-symbols-outlined">
                         lock
                     </span>
-                    <input  {...register("password")} className="focus:outline-none focus:shadow-outline mx-3 w-full" id="password" type="password" placeholder="At least 8 characters" />
+                    <input  {...register("password", { pattern: /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/})} required className="focus:outline-none focus:shadow-outline mx-3 w-full" id="password" type="password" placeholder="At least 8 characters" />
                 </div>
+                {errors.password && <p className="text-red-700 text-xs">Password most have at least, a capital letter, a number, a special character, 8+ lenght</p>}
                 {/* Login Button */}
                 <div className="flex items-center justify-between">
                     <button className="bg-[#9da0a373] hover:bg-[#74757773] text-white font-bold py-2 w-full px-4 rounded focus:outline-none focus:shadow-outline"
