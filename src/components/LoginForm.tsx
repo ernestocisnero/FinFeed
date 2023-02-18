@@ -1,6 +1,9 @@
 import { Link, Navigate } from "react-router-dom";
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useEffect } from "react";
+import { LogInUserEmailandpassword } from "../redux/thunks/authThunks";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../redux/store/store";
 
 
 type Inputs = {
@@ -11,6 +14,7 @@ type Inputs = {
 export const LoginForm = (): JSX.Element => {
 
     const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful } } = useForm<Inputs>();
+    const dispatch: AppDispatch = useDispatch();
 
     useEffect(() => {
         if (isSubmitSuccessful) {
@@ -25,9 +29,9 @@ export const LoginForm = (): JSX.Element => {
 
     const onSubmit: SubmitHandler<Inputs> = data => {
         const { email, password } = data;
-        console.log(email, password);
-        
-        
+
+        dispatch(LogInUserEmailandpassword({email, password}))
+
     }
 
 

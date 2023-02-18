@@ -14,3 +14,4 @@ export * from './Plan';
 export * from './MainSlidePresentation';    
 export * from './LoginForm';    
 export * from './RegisterForm';    
+export * from './Loading';    

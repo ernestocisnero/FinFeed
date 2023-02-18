@@ -2,10 +2,13 @@ import { Link } from "react-router-dom"
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useEffect, useState } from "react";
 import { compareEmailandPassword } from "../helpers/compareEmailandPassword";
+import { RegisterNewUser } from "../redux/thunks/authThunks";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from '../redux/store/store';
 
 type Inputs = {
     name: string,
-    last_name: string,
+    lastName: string,
     email: string,
     confirm_email: string,
     password: string,
@@ -13,18 +16,21 @@ type Inputs = {
 };
 
 export const RegisterForm = (): JSX.Element => {
+    const dispatch: AppDispatch = useDispatch();
+
     const [ emailPassError, setEmailPassError ] = useState<boolean>(false);
 
-    const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful } } = useForm<Inputs>();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>();
 
 
     const onSubmit: SubmitHandler<Inputs> = data => {
-        const { name, last_name, email, confirm_email, password, confirm_password } = data;
+        const { name, lastName, email, confirm_email, password, confirm_password } = data;
 
         if(compareEmailandPassword({ email, confirm_email, password, confirm_password })){
-            console.log({ name, last_name, email, confirm_email, password, confirm_password });
             setEmailPassError(false);
-            reset({name:'',last_name:'', email: '', confirm_email:'', password: '', confirm_password:''});
+            dispatch(RegisterNewUser({name, lastName, email, password}));
+
+            reset({name:'',lastName:'', email: '', confirm_email:'', password: '', confirm_password:''});
         }else{
             setEmailPassError(true);
         }
@@ -45,7 +51,7 @@ export const RegisterForm = (): JSX.Element => {
                     <span className="material-symbols-outlined">
                         badge
                     </span>
-                    <input {...register('last_name')} required className="focus:outline-none focus:shadow-outline mx-3 w-full bg-inherit" id="lastname" type="text" placeholder="Lastname" />
+                    <input {...register('lastName')} required className="focus:outline-none focus:shadow-outline mx-3 w-full bg-inherit" id="lastname" type="text" placeholder="Lastname" />
                 </div>
                 {/* Email */}
                 <div className="mb-5 flex justify-start shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
