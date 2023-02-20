@@ -1,5 +1,5 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateCurrentUser, updateProfile } from "firebase/auth"
-import { auth } from "../../firebase/firebaseConfig"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, updateCurrentUser, updateProfile } from "firebase/auth"
+import { auth, googleProvider } from "../../firebase/firebaseConfig"
 import { authenticating, login, logout } from "../slices/authSlice"
 import { AppDispatch } from "../store/store"
 
@@ -28,8 +28,7 @@ export const RegisterNewUser = ({ name, lastName, email, password }: UserCredent
                 errorMessage: 'Sorry, account not created!'
             }));
 
-            //update user profile Name.
-            
+            await updateProfile(user, { displayName: `${name} ${lastName}` });
 
             return dispatch(login({
                 status: 'authenticated',
@@ -66,6 +65,43 @@ export const LogInUserEmailandpassword = ({ email, password }: UserCredentials) 
                 errorMessage: 'Sorry, user not found!'
             }));
 
+            console.log("I'm here!");
+
+            return dispatch(login({
+                status: 'authenticated',
+                displayName: user.displayName,
+                email: user.email,
+                uid: user.uid,
+                photoURL: user.photoURL,
+                errorMessage: null
+            }))
+
+
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
+
+export const LoginWithGoogle = () => {
+
+    return async (dispatch: AppDispatch) => {
+
+        dispatch(authenticating());
+
+        try {
+            const { user } = await signInWithPopup(auth, googleProvider);
+
+            if (!user) return dispatch(logout({
+                status: 'not-authenticated',
+                displayName: null,
+                email: null,
+                uid: null,
+                photoURL: null,
+                errorMessage: 'Sorry, account not created!'
+            }));
+
             return dispatch(login({
                 status: 'authenticated',
                 displayName: user.displayName,
@@ -79,4 +115,5 @@ export const LogInUserEmailandpassword = ({ email, password }: UserCredentials) 
             console.error(error);
         }
     }
+
 }

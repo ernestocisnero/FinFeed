@@ -1,7 +1,7 @@
 import { Link, Navigate } from "react-router-dom";
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useEffect } from "react";
-import { LogInUserEmailandpassword } from "../redux/thunks/authThunks";
+import { LogInUserEmailandpassword, LoginWithGoogle } from "../redux/thunks/authThunks";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store/store";
 
@@ -29,11 +29,14 @@ export const LoginForm = (): JSX.Element => {
 
     const onSubmit: SubmitHandler<Inputs> = data => {
         const { email, password } = data;
-
         dispatch(LogInUserEmailandpassword({email, password}))
-
     }
 
+    const signInGoogle = ( event: React.MouseEvent<HTMLButtonElement, MouseEvent> )=>{
+        event.stopPropagation()
+        event.preventDefault();
+        dispatch(LoginWithGoogle())
+    }
 
     return (
         <div className="w-full max-w-lg">
@@ -64,7 +67,7 @@ export const LoginForm = (): JSX.Element => {
                 <p className="text-center text-slate-300 font-light mt-8">or use your prefered login app </p>
 
                 <div className="flex justify-evenly mt-7">
-                    <button className="flex bg-[#fff] border-[1px] border-slate-200 text-[#9da0a373] hover:bg-[#9da0a373] hover:text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    <button onClick={ signInGoogle } className="flex bg-[#fff] border-[1px] border-slate-200 text-[#9da0a373] hover:bg-[#9da0a373] hover:text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                         <img className='mr-3 w-6 h-6' src="google.svg" alt="google_logo" />Google
                     </button>
 
