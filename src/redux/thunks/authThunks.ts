@@ -1,5 +1,5 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, updateCurrentUser, updateProfile } from "firebase/auth"
-import { auth, googleProvider } from "../../firebase/firebaseConfig"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut, updateCurrentUser, updateProfile } from "firebase/auth"
+import { auth, facebookProvider, googleProvider } from "../../firebase/firebaseConfig"
 import { authenticating, login, logout } from "../slices/authSlice"
 import { AppDispatch } from "../store/store"
 
@@ -116,4 +116,59 @@ export const LoginWithGoogle = () => {
         }
     }
 
+}
+
+export const LoginWithFacebook = ()=>{
+    return async (dispatch: AppDispatch) => {
+
+        dispatch(authenticating());
+
+        try {
+            const { user } = await signInWithPopup(auth, facebookProvider);
+
+            if (!user) return dispatch(logout({
+                status: 'not-authenticated',
+                displayName: null,
+                email: null,
+                uid: null,
+                photoURL: null,
+                errorMessage: 'Sorry, account not created!'
+            }));
+
+            return dispatch(login({
+                status: 'authenticated',
+                displayName: user.displayName,
+                email: user.email,
+                uid: user.uid,
+                photoURL: user.photoURL,
+                errorMessage: null
+            }))
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
+
+export const SignOut = () => {
+
+    return async (dispatch: AppDispatch) => {
+        dispatch(authenticating());
+
+        try {
+            await signOut(auth);
+            dispatch(logout({
+                status: 'not-authenticated',
+                displayName: null,
+                email: null,
+                uid: null,
+                photoURL: null,
+                errorMessage: 'Sorry, account not created!'
+            }));
+
+        } catch (error) {
+            console.error(error);
+
+        }
+    }
 }

@@ -24,11 +24,11 @@ export const authSlice = createSlice({
             state.errorMessage = payload.errorMessage;
         },
         logout: ( state, { payload }: PayloadAction<Iauth_initial_state> )=>{
-            state.status = 'not-authenticated';
-            state.displayName = null;
-            state.email = null;
-            state.uid = null;
-            state.photoURL = null;
+            state.status = payload.status;
+            state.displayName = payload.displayName;
+            state.email = payload.email;
+            state.uid = payload.uid;
+            state.photoURL = payload.photoURL;
             state.errorMessage = payload?.errorMessage;
         },
         authenticating: ( state )=>{

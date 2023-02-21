@@ -1,7 +1,7 @@
 import { Link, Navigate } from "react-router-dom";
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useEffect } from "react";
-import { LogInUserEmailandpassword, LoginWithGoogle } from "../redux/thunks/authThunks";
+import { LogInUserEmailandpassword, LoginWithFacebook, LoginWithGoogle } from "../redux/thunks/authThunks";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store/store";
 
@@ -38,6 +38,12 @@ export const LoginForm = (): JSX.Element => {
         dispatch(LoginWithGoogle())
     }
 
+    const signInFacebook = ( event: React.MouseEvent<HTMLButtonElement, MouseEvent> )=>{
+        event.preventDefault();
+        dispatch(LoginWithFacebook());
+
+    }
+
     return (
         <div className="w-full max-w-lg">
             <form className="bg-[#fff] shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(onSubmit)}>
@@ -71,7 +77,7 @@ export const LoginForm = (): JSX.Element => {
                         <img className='mr-3 w-6 h-6' src="google.svg" alt="google_logo" />Google
                     </button>
 
-                    <button className="flex bg-[#fff] border-[1px] border-slate-200 text-[#9da0a373] hover:bg-[#9da0a373] hover:text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                    <button onClick={ signInFacebook } className="flex bg-[#fff] border-[1px] border-slate-200 text-[#9da0a373] hover:bg-[#9da0a373] hover:text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                         <img className='mr-3 w-6 h-6' src="facebook.svg" alt="facebook_logo" />Facebook
                     </button>
                 </div>
