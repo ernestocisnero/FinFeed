@@ -2,8 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{html,jsx,ts,tsx}"],
   purge: [
-    "./src/components/**/*.{js,jsx}",
-    "./public/index.html",
+    "./src/pages/**/*.tsx", "./src/components/**/*.tsx"
   ],
   theme: {
     extend: {},
