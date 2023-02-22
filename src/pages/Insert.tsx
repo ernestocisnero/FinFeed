@@ -1,5 +1,5 @@
 
-export const Tracker = (): JSX.Element => {
+export const Insert = (): JSX.Element => {
     return (
         <div>Soon</div>
     )
