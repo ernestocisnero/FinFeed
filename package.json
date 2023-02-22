@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tlw": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
+    "tlw": "npx tailwindcss -i ./src/index.css -o ./output/output.css --watch"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
