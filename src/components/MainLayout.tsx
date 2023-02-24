@@ -17,7 +17,7 @@ export const MainLayout = ({ children }: MainLayoutPropType) => {
 
             <div className="flex flex-grow">
                 <DrawerMenu />
-                <main className="p-4 w-full grid grid-cols-12">
+                <main className="min-w-[90vw] ">
                     {children}
                 </main>
             </div>

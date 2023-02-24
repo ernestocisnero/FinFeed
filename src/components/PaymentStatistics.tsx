@@ -12,10 +12,10 @@ export const PaymentStatistics = () => {
                 </button>
             </div>
             <div className="flex justify-start gap-10 my-2">
-                <div className="hover:bg-[#266663] hover: cursor-pointer text-neutral-400 hover:text-neutral-50 border-solid border-[#266663] p-1 rounded-sm ">Today</div>
-                <div className="hover:bg-[#266663] hover: cursor-pointer text-neutral-400 hover:text-neutral-50 border-solid border-[#266663] p-1 rounded-sm ">Week</div>
-                <div className="hover:bg-[#266663] hover: cursor-pointer text-neutral-400 hover:text-neutral-50 border-solid border-[#266663] p-1 rounded-sm ">Month</div>
-                <div className="hover:bg-[#266663] hover: cursor-pointer text-neutral-400 hover:text-neutral-50 border-solid border-[#266663] p-1 rounded-sm ">Year</div>
+                <button className="hover:bg-[#266663] hover: cursor-pointer text-neutral-400 hover:text-neutral-50 border-solid border-[#266663] p-1 rounded-sm ">Today</button>
+                <button className="hover:bg-[#266663] hover: cursor-pointer text-neutral-400 hover:text-neutral-50 border-solid border-[#266663] p-1 rounded-sm ">Week</button>
+                <button className="hover:bg-[#266663] hover: cursor-pointer text-neutral-400 hover:text-neutral-50 border-solid border-[#266663] p-1 rounded-sm ">Month</button>
+                <button className="hover:bg-[#266663] hover: cursor-pointer text-neutral-400 hover:text-neutral-50 border-solid border-[#266663] p-1 rounded-sm ">Year</button>
             </div>
             <div className="border-solid border-slate-200 border-b-[1px] w-full"></div>
 

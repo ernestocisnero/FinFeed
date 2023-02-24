@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 
 export const DrawerMenu = () => {
+
     return (
         <aside className="flex flex-col min-w-[9.2%] border-r-[1px] border-slate-300 justify-between">
             <ul className="my-5 mx-2">
