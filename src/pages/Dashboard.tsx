@@ -7,7 +7,7 @@ import { Planning } from '../components/Planning';
 export const Dashboard = (): JSX.Element => {
 
     return (
-        <>
+        <div className="p-4 w-full grid grid-cols-12">
             <div className="col-start-1 col-end-7">
                 <PaymentStatistics />
                 <ExpByCategoriesChart />
@@ -20,6 +20,6 @@ export const Dashboard = (): JSX.Element => {
                 <Planning />
 
             </div>
-        </>
+        </div>
     )
 }
