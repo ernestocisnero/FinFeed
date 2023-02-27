@@ -6,14 +6,27 @@ import { RootState } from './redux/store/store';
 import { Loading } from './components';
 import { auth } from './firebase/firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { login, logout } from './redux/slices/authSlice';
+import { SizeNotAuthorized } from './pages';
 
 
 function App() {
 
   const { status } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
+
+  const [notInSize, setnotInSize] = useState<boolean>(false);
+
+  // let notInSize;
+
+  useEffect(() => {  
+    window.screen.width <= 1350
+      ? setnotInSize(true)
+      : setnotInSize(false)
+  }, [])
+
+
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
@@ -40,18 +53,22 @@ function App() {
 
   if (status === 'checking') return <Loading />
 
-  return (
-    <div className="App">
-      <Routes>
-        {
-          status === 'not-authenticated'
-            ? <Route path='/auth/*' element={<AuthRouter />} />
-            : <Route path='/*' element={<AppRouter />} />
-        }
-        <Route path='/*' element={<Navigate to={"/auth"} />} />
-      </Routes>
-    </div>
-  )
+  if (notInSize) {
+    return <SizeNotAuthorized />
+  } else {
+    return (
+      <div className="App">
+        <Routes>
+          {
+            status === 'not-authenticated'
+              ? <Route path='/auth/*' element={<AuthRouter />} />
+              : <Route path='/*' element={<AppRouter />} />
+          }
+          <Route path='/*' element={<Navigate to={"/auth"} />} />
+        </Routes>
+      </div>
+    )
+  }
 }
 
 export default App

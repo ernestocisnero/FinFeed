@@ -5,3 +5,4 @@ export * from './Cards';
 export * from './History';
 export * from './Insert';
 export * from './NotFound';
+export * from './SizeNotAuthorized';
